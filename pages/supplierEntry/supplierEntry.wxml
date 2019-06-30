@@ -25,7 +25,7 @@
     </view>
   </view>
   <view class='btn' bindtap="upImage">
-    一次请上传一张
+    肤质鉴定
   </view>
 
 </view>

@@ -4,7 +4,7 @@
 .header{
   background: #fafafa;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   font-size:34rpx;
   font-weight:400;

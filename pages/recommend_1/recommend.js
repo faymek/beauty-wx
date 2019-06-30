@@ -5,6 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    faceinfo:"",
+    filename:"",
     recommendType: 0,
     selectedNum: 1,
     recommandItems: [
@@ -100,6 +102,34 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
+    that.setData({
+      filename: options.fn
+    });
+    wx.request({
+      url: 'http://116.62.213.180/getFace/',
+      method: 'POST',
+      data: {'fn':options.fn },
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      success: function (res) {
+        console.log('submit success');
+        console.log(res.data.output);
+        var face = res.data.output;
+        that.setData({
+          faceinfo: "肤色：" + face.color + "\n痘痘：" + face.pimple.toString()+"\n黑眼圈："+face.darkeye.toFixed(3).toString()
+        });
+        
+      },
+      fail: function (res) {
+        console.log('submit fail');
+        wx.showToast({
+          icon: "loading",
+          title: "更新购物车失败"
+        });
+      },
+      complete: function (res) {
+        console.log('submit complete');
+      }
+    });
     wx.getSystemInfo({
       success: function (res) {
         let w_height = res.windowHeight * (750 / res.windowWidth)

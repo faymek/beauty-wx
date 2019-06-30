@@ -1,8 +1,9 @@
 <view class="header">
   <view class="product {{recommendType===0?'on':''}}" data-recommendType="0" bindtap='chooseRecommendType'>
-    <view class="word">根据您的特点，我们为您推荐：</view>
-      </view>
-    <!-- <image src="/resources/images/tabBar/category0.png" bindtap='toCate'></image> -->
+    <view>{{faceinfo}}</view>
+  </view>
+  <view class="word">根据您的特点，我们为您推荐：</view>
+
 </view>
 
 <import src="../../templates/goodItemCard/goodItemCard.wxml" />

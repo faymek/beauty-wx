@@ -9,6 +9,7 @@ Page({
     contactPhone: "",
     email: "",
     images: [],
+    filename: ""
   },
 
  /** chooseImage: function () {
@@ -48,61 +49,26 @@ Page({
           icon: "loading",
           title: "正在上传"
         }),
+
       wx.uploadFile({
-          url: 'http://example.weixin.qq.com/upload', //仅为示例，非真实的接口地址
+        url: 'http://116.62.213.180/upload/',
           filePath: resImages[0],
-          name: 'file',
+          name: 'img',
           formData: {
-            'user': 'test'
+            'user': 'user0'
           },
         success: function (res) {
           console.log('submit success');
+          console.log(res.data);
+          fn = JSON.parse(res.data);
+          _this.setData({
+            filename:fn.output
+          });
+          console.log(_this.data.filename);
           wx.showToast({
             icon: "loading",
             title: "上传照片成功"
-          });
-          if (res.data == 0)
-          {
-            wx.navigateTo({
-              url: '/pages/recommend/recommend',
-            })
-          }
-          if (res.data == 1)
-          {
-            wx.navigateTo({
-              url: '/pages/recommend_1/recommend',
-            })
-          }
-          if (res.data == 2)
-          {
-            wx.navigateTo({
-              url: '/pages/recommend_2/recommend',
-            })
-          }
-          if (res.data == 3) 
-          {
-            wx.navigateTo({
-              url: '/pages/recommend_3/recommend',
-            })
-          }
-          if (res.data == 4) 
-          {
-            wx.navigateTo({
-              url: '/pages/recommend_4/recommend',
-            })
-          }
-          if (res.data == 5) 
-          {
-            wx.navigateTo({
-              url: '/pages/recommend_5/recommend',
-            })
-          }
-          if (res.data == 6) 
-          {
-            wx.navigateTo({
-              url: '/pages/recommend_6/recommend',
-            })
-          }
+          });          
          },
         fail: function (res) {
           console.log('submit fail');
@@ -130,6 +96,14 @@ Page({
           
         })
       },
+    })
+  },
+
+  upImage: function () {
+    var _this = this;
+    console.log("up")
+    wx.navigateTo({
+      url: '/pages/recommend_1/recommend?fn='+_this.data.filename,
     })
   },
 
