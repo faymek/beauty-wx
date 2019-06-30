@@ -123,7 +123,7 @@ Page({
         console.log('submit fail');
         wx.showToast({
           icon: "loading",
-          title: "更新购物车失败"
+          title: "获取肤质信息失败"
         });
       },
       complete: function (res) {

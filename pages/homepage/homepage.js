@@ -180,9 +180,9 @@ Page({
             console.log(id_get);
 
             wx.request({
-              url: '',
-              data: id_get,
+              url: 'http://116.62.213.180/addCart/',
               method: 'POST',
+              data: { 'pid': id_get },
               header: { 'content-type': 'application/x-www-form-urlencoded' },
               success: function (res) {
                 console.log('submit success');
@@ -201,11 +201,8 @@ Page({
               complete: function (res) {
                 console.log('submit complete');
               }
-            })
-
-
-
-
+            });
+            
             wx.setStorage({
               key: 'cart',
             })
