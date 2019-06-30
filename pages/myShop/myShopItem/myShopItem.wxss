@@ -1,0 +1,135 @@
+.header{
+  height:150rpx;
+  display: flex;
+  flex-direction: row;
+  background: linear-gradient(to right,#FE5400,rgb(255, 141, 11))
+}
+
+.header image{
+  width:110rpx;
+  height: 110rpx;
+  margin: 20rpx;
+}
+
+.header .nameContainer{
+  width:350rpx;
+  display: flex;
+  flex-direction: column
+}
+
+.header .nameContainer .shopName{
+  margin-top: 30rpx;
+  font-size: 35rpx;
+  color: #FFFFFF;
+}
+
+.header .nameContainer .platform{
+  margin-top:15rpx;
+  margin-left: 15rpx;
+  font-size: 30rpx;
+  color:#FFFFFF;
+}
+
+.font30White{
+  font-size: 30rpx;
+  color: #FFFFFF;
+}
+
+.shopData{
+  height:100rpx;
+  display: flex;
+  flex-direction: row;
+  background: linear-gradient(to right,#FE5400,rgb(255, 141, 11))
+}
+
+.shopData .dataDetail{
+  width:250rpx;
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.stockItem{
+  height: 200rpx;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1rpx solid #e4e4e4;
+  align-items: center
+}
+
+.stockItem image{
+  width:150rpx;
+  height: 150rpx;
+  margin:25rpx;
+}
+
+.stockItem .stockItemData{
+  height: 180rpx;
+  width: 550rpx;
+  display: flex;
+  flex-direction: column
+}
+
+.stockItem .stockItemData .stockItemName{
+  height: 45rpx;
+  display: flex;
+  font-size:30rpx;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+}
+
+.stockItem .stockItemData .stockItemStock{
+  height: 35rpx;
+  display: flex;
+  font-size:25rpx;
+  overflow: hidden;
+  text-align: center;
+  color:#7e7e7e;
+}
+
+.stockItem .stockItemData .stockItemMoney{
+  height: 35rpx;
+  display: flex;
+  flex-direction: row;
+  font-size:25rpx;
+  overflow: hidden;
+  text-align: center;
+  margin-bottom: 10rpx
+}
+
+.stockItem .stockItemData .stockItemMoney .stockItemPrice{
+  margin-right: 20rpx;
+}
+
+.stockItem .stockItemData .stockItemMoney .stockItemProfit{
+  margin-left: 20rpx;
+  color:#FE5400;
+}
+
+.stockItem .stockItemData .stockItemButtons{
+  height: 45rpx;
+  display: flex;
+  flex-direction: row;
+  font-size: 25rpx;
+}
+
+.stockItem .stockItemData .stockItemButtons .leftButton{
+  height:40rpx;
+  width:150rpx;
+  border: 1rpx solid #e4e4e4;
+  margin-right: 240rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stockItem .stockItemData .stockItemButtons .rightButton{
+  height:40rpx;
+  width:150rpx;
+  border: 1rpx solid #e4e4e4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

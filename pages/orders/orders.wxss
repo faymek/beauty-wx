@@ -1,0 +1,119 @@
+/* pages/orders/orders.wxss */
+@import '../../templates/recommend/recommend.wxss';
+page{
+  background-color: #F4F4F4;
+}
+.orders-navbar {
+  display: flex;
+  flex-direction: row;
+  font-size: 30rpx;
+  text-align: center;
+  padding-top: 20rpx;
+}
+.orders-navbar-active {
+  width: 25%;
+  border-bottom: 2px solid red;
+  margin: 0 20rpx 0 20rpx;
+}
+.orders-navbar-inactive {
+  width: 25%;
+  margin: 0 20rpx 20rpx 20rpx;
+}
+
+.orders-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30% 0 30% 0;
+  width: 100%
+}
+
+.orders-container{
+  padding: 0 20rpx 0 20rpx;
+  background-color:#F4F4F4;
+}
+.orders-shop{
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  padding: 20rpx;
+  margin-top: 20rpx;
+  border-radius: 20rpx;
+}
+
+.orders-shopName{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 25rpx;
+}
+
+.orders-shopTitle{
+  padding-left: 25rpx;
+}
+
+.orders-status{
+  position: absolute;
+  right: 5%;
+  text-align: end;
+  color: red;
+}
+
+.orders-box{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  font-size: 25rpx;
+  padding-top: 25rpx;
+}
+
+.orders-box .orders-thumb{
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.orders-box .orders-title{
+  padding-left: 25rpx;
+  width: 50%
+}
+
+.orders-box .orders-info{
+  margin-left: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.orders-total{
+  align-self:flex-end;
+}
+
+.orders-buttonGroup{
+  display: flex;
+  flex-direction: row;
+  padding: 10rpx 0 10rpx 0;
+  height: 25rpx;
+  font-size: 25rpx;
+}
+
+.orders-button1{
+  position: absolute;
+  right: 160rpx;
+  width: 120rpx;
+  text-align: center;
+  border: 1rpx solid #C5C5C5;
+  border-radius: 20rpx;
+  margin: 0 10rpx 0 10rpx;
+  padding: 2rpx 0 2rpx 0
+}
+
+.orders-button2{
+  position: absolute;
+  right: 20rpx;
+  width: 120rpx;
+  text-align: center;
+  border: 1rpx solid#C5C5C5;
+  border-radius: 20rpx;
+  margin: 0 10rpx 0 10rpx;
+  padding: 2rpx 0 2rpx 0
+}

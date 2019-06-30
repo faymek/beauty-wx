@@ -1,0 +1,10 @@
+<view class="container">
+  <view class="top">
+    <view style="font-size: 35rpx; color: #32B531"></view>
+  </view>
+  <view class="middle">
+    <text style="font-size: 35rpx; color: #FF6369">审核中</text>
+    <text style="font-size: 35rpx; color: #FF6369; padding-top: 40rpx">请耐心等待</text>
+  </view>
+  <view class="bottom" bindtap="complete">返回</view>
+</view>

@@ -1,0 +1,25 @@
+<import src="/templates/supplyItem2/supplyItem2" />
+<view class='navbar'>
+  <view class="navbar{{currentTab==index?'-active':'-inactive'}}" bindtap='navbarTap' wx:for="{{navbar}}" wx:key="key" data-index="{{index}}">
+      {{item}}
+  </view>
+</view>
+
+<scroll-view scroll-y='true'  style='height:{{windowHeight-100}}rpx' lower-threshold="30">
+  <view wx:for="{{showSuppliers}}" wx:key="key" style="right:{{item.right}}rpx">
+    <view> 
+      <image bindtap="actionSheetTap" data-name="{{item.name}}" class="more-button" src='/resources/images/gengduo.png'/>
+      <template is="supplyItem2" data="{{...item}}"></template>
+    </view>
+  </view>
+  <view class="del">删除</view>
+</scroll-view>   
+
+<action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetChange">
+  <view class="actions">
+    <text class="supplier-title">{{supplierTapped}}</text>
+    <view class="action">设为星标</view>
+    <view class="action">取消关注</view>
+    <text class="action">删除</text>
+  </view>
+</action-sheet>

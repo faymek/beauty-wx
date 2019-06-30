@@ -1,0 +1,23 @@
+page{
+  height: 100%;
+  overflow: hidden;
+}
+.all{
+  display: flex;
+  flex-direction: column;
+  padding-top: 5rpx;
+  align-items: center; 
+}
+.top{
+  padding-top: 30%;
+}
+.bottom{
+  margin-top: 50rpx;
+  font-size: 30rpx;
+  color: #2FB42E;
+  width: 200rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border: 3rpx solid #1AAD19;
+  border-radius: 20rpx;
+}

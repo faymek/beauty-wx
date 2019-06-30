@@ -1,0 +1,6 @@
+<view class="all">
+  <view class="top">
+    <view style="font-size: 35rpx;">交易成功</view>
+  </view>
+  <view class="bottom" bindtap="complete">返回首页</view>
+</view>

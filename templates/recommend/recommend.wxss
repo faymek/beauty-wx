@@ -1,0 +1,12 @@
+@import '../goodItemCard/goodItemCard.wxss';
+
+.cart-recommend {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-recommend-title {
+  align-self: center;
+  padding-bottom: 20rpx;
+  font-size: 33rpx;
+}

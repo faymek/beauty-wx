@@ -1,0 +1,65 @@
+{
+  "pages": [
+    "pages/homepage/homepage",
+    "pages/barcode/barcode",
+    "pages/supplierEntry/supplierEntry",
+    "pages/recommend/recommend",
+    "pages/recommend_1/recommend",
+    "pages/recommend_2/recommend",
+    "pages/recommend_3/recommend",
+    "pages/recommend_4/recommend",
+    "pages/recommend_5/recommend",
+    "pages/recommend_6/recommend",
+    "pages/recommend/publish/publish",
+    "pages/detail/goodDetail/goodDetail",
+    "pages/detail/supplierDetail/supplierDetail",
+    "pages/myShop/myShop",
+    "pages/supplierShop/supplierShop",
+    "pages/myShop/myShopItem/myShopItem",
+    "pages/search/supplySearch/supplySearch",
+    "pages/search/goodSearch/goodSearch",
+    "pages/search/search",
+    "pages/shoppingCart/shoppingCart",
+    "pages/category/category",
+    "pages/personal/personal",
+    "pages/personal/supplier/supplier",
+    "pages/orders/makeOrder/makeOrder",
+    "pages/orders/orderSuccess/orderSuccess",
+    "pages/orders/wuliu/wuliu",
+    "pages/orders/confirmOrder/confirmOrder",
+    "pages/recommend/publishComplete/publishComplete"
+  ],
+  "window": {},
+  "tabBar": {
+    "color": "#cdcdcd",
+    "selectedColor": "#FE5400",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/homepage/homepage",
+        "text": "商城",
+        "iconPath": "resources/images/tabBar/homepage0.png",
+        "selectedIconPath": "resources/images/tabBar/homepage1.png"
+      },
+      {
+        "pagePath": "pages/recommend/recommend",
+        "text": "推荐",
+        "iconPath": "resources/images/tabBar/recommend0.png",
+        "selectedIconPath": "resources/images/tabBar/recommend1.png"
+      },
+      {
+        "pagePath": "pages/shoppingCart/shoppingCart",
+        "text": "购物车",
+        "iconPath": "resources/images/tabBar/shoppingCart0.png",
+        "selectedIconPath": "resources/images/tabBar/shoppingCart1.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "我的",
+        "iconPath": "resources/images/tabBar/personal0.png",
+        "selectedIconPath": "resources/images/tabBar/personal1.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

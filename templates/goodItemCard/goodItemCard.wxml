@@ -1,0 +1,16 @@
+<template name="goodItemCard">
+  <wxs src="../../utils/subutil.wxs" module="tools"/>
+  <view class="item-box">
+    <image class="item-thumb" src = "{{img}}"/>
+    <text class="item-title">{{tools.sub(title,28)}}</text>
+    <view class="subBox">
+      <text style='color: red;font-size:30rpx'>¥</text>
+      <text class="item-price">{{price[0]}}</text>
+    </view>
+    <view class="subBox">
+      <text class="sale">{{language['已成交']||'已成交'}}{{sale[0]}}{{sale[1]}}</text>
+    </view>
+
+
+  </view>
+</template>

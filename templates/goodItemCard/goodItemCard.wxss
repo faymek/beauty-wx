@@ -1,0 +1,39 @@
+.item-box{
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 25rpx;
+  background: #FFFFFF;
+  width: 48%;
+  height: 450rpx;
+  margin: 5rpx;
+  margin-left: 10rpx;
+  border-radius: 20rpx;
+}
+
+.item-box .item-thumb{
+  width: 80%;
+  height: 60%;
+}
+
+.item-box .item-title {
+  width: 80%;
+  height: 20%;
+  font-size: 25rpx
+}
+
+.item-box .subBox{
+  width:75%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.item-box .item-price {
+  color: red;
+  font-size:35rpx;
+}
+
+.item-box .sale{
+  color:#686868
+}

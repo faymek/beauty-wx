@@ -1,0 +1,263 @@
+<wxs src="../../../utils/subutil.wxs" module="tools" />
+<import src="../../../templates/goodItemCard/goodItemCard.wxml" />
+<import src="../../..//wxParse/wxParse.wxml"/>
+
+<view style="{{overflow?'overflow: auto':'overflow: hidden'}}" class="{{lockContent?'lock-content':''}}">
+  <view style='position:relative'>
+    <swiper indicator-dots='{{indicatorDots}}' autoplay='{{autoplay}}' interval='{{interval}}' duration='{{duration}}' current='{{cur}}' bindchange='swiperChange'>
+      <block wx:for="{{imgs}}" wx:for-index="index" wx:key="key" style="height:100%">
+        <swiper-item>
+          <image mode='aspectFill' src='{{item}}'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="img_index">
+      <view>{{imgIndex+1}}/{{imgs.length}}</view>
+    </view>
+  </view>
+
+  <view style='background:#e6e6e6;width:100%'>
+
+    <view class="form1">
+      <view style="display: flex;">
+        <text class="name">{{name}}</text>
+        <picker style="margin-top: 5rpx;" mode="selector" range="{{languages}}" value="{{langIndex}}" bindchange="changeLanguage">
+          <image class='exchangeBth' src='../../../resources/images/exchange.png'></image>
+        </picker>
+      </view>
+      <view class="prices">
+        <view class="price" wx:for="{{prices}}" wx:for-index="index" wx:key="key">
+          <view style='display:flex;flex-direction:row;'>
+            <view style="margin-top:30rpx;color:#FE5400;font-size:30rpx">￥</view>
+            <view style="color:#FE5400;font-size:56rpx">{{item.price}}</view>
+          </view>
+          <view style='margin-top:4rpx;letter-spacing: 0rpx' class="light_30font">{{item.num}}</view>
+        </view>
+      </view>
+      <view class="logistics">
+        <view style='display:flex;align-items:center;margin-right:15rpx'>
+          <view class="bold_33font" style='margin-right:10rpx'>{{language.express}}</view>
+          <view style='font-size:28rpx;'>{{place}}</view>
+        </view>
+        <view style='display:flex;align-items:center;'>
+          <view style='font-size:28rpx;'>{{language['快递费']}} ￥{{cost}}</view>
+        </view>
+      </view>
+    </view>
+
+    <view class='roe'>
+      <view class='roe-title'>{{language['今日汇率']}}</view>
+      <view class='roeList'>
+        <view class='roeInfo' wx:for="{{ROE}}" wx:for-index="index" wx:key="key">
+          <image src="{{item.img}}"></image>
+          <view>
+            <view class="exchange">
+              100{{item.code}} = {{item.price}}CNY
+            </view>
+            <view class="exprice">
+              {{language['约']}} {{item.min}} - {{item.max}}{{item.code}}
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="form2">
+
+      <view class='subform'>
+        <view class='subtitle bold_33font'>{{language['数据']}}</view>
+        <view class="data">
+          <view class="subdata" wx:for="{{dt}}" wx:key="key">
+            <view style='font-size:30rpx;'>{{language[item.kind]}}</view>
+            <view style='margin:20rpx 0;display:flex;'>
+              <view style='font-size:40rpx'>{{item.num}}</view>
+              <view style='font-size:30rpx;margin-top:10rpx'>{{item.unit}}</view>
+            </view>
+            <view class="light_30font" style='text-overflow: ellipsis'>{{language[item.subKind]}}{{item.cal}}
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class="border"></view>
+
+      <view class="subform2">
+        <view style='display: flex;align-items:center'>
+          <view class='subtitle bold_33font'>{{language['属性']}}</view>
+          <view style='text-overflow:ellipsis;white-space:nowrap;word-wrap:break-word;overflow:hidden;'>
+            {{property}}
+          </view>
+          <view style='text-align:center;line-height:50rpx;color:#e6e6e6'>></view>
+        </view>
+       
+      </view>
+
+    </view>
+
+    <view class='form2'>
+      <view class="subform" style="align-items: center;border-bottom:1px solid #e6e6e6;">
+        <view class='subtitle bold_33font'>{{language['服务']}}</view>
+        <view class="data" style='font-size:26rpx;'>
+          <view style="margin-right: 10px;display: flex;align-items: center;" wx:for="{{tools.sublist(service,3)}}" wx:key="key">
+            <icon type="success" size="15"></icon>
+            <view style="margin-left:15rpx">{{language[item]}}</view>
+          </view>
+        </view>
+        <view style='text-align:center;line-height:30rpx;color:#e6e6e6'>></view>
+      </view>
+
+      <view class="subform" style="align-items: center;">
+        <image src='https://img.alicdn.com/tfs/TB10qL.khnaK1RjSZFtXXbC2VXa-256-172.png'  class='ccclabel'></image>
+        <view bindtap='cccInfoChange' style='font-size:26rpx;flex-grow:1;'>
+          {{language['证书编号']}}： {{cccNumber}}
+        </view>
+        <view style='text-align:center;line-height:30rpx;color:#e6e6e6'>></view>
+      </view>
+    </view>
+
+    <view class='shop-info'>
+      <image style='width:60rpx;height:60rpx' src="{{supplier.img}}"></image>
+      <view style='width:82%;height:100%;display:flex;flex-direction:column'>
+        <view style="margin-bottom:20rpx;">
+          <view style='font-size:35rpx;font-weight:600'>{{supplier.name}}</view>
+          <view style='font-size:25rpx;color: #a6a6a6'>{{supplier.old}}</view>
+        </view>
+        <view style="display:flex;flex-direction:row">
+          <view class="statistic-item">
+            <view>
+              {{supplier.backHead}}%
+            </view>
+            <view style='font-size:22rpx;color:#a6a6a6'>{{language['回头率']}}</view>
+          </view>
+          <view class="statistic-item" style="border-left:1rpx solid #e7e7e7;border-right:1rpx solid #e7e7e7;">
+            <view>
+              {{supplier.customers}}
+            </view>
+            <view style='font-size:22rpx;color:#a6a6a6'>
+              {{language['近90天买家数']}}
+            </view>
+          </view>
+          <view class="sale-info">
+            <view wx:for="{{supplier.statistics}}" wx:key="key">
+              <view>
+                {{item.type}}
+              </view>
+              <view>
+                {{item.value}}%
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="shop-op">
+          <button bindtap='toSupplierShop'>
+            {{language['进入店铺']}}
+          </button>
+          <button style="background-color:white;">
+            {{language['全部商品']}}
+          </button>
+        </view>
+      </view>
+    </view>
+    <view class='form2'>
+      <view style='width:100%;height:80rpx;display:flex;align-items:center;justify-content:center;font-size:35rpx;font-weight:500'>
+        {{language['商家推荐']}}
+      </view>
+      <view style='width:100%;display:flex;flex-flow:row wrap'>
+        <template wx:for="{{recommandItems}}" wx:key="key" is="goodItemCard" data="{{...item,language}}"></template>
+      </view>
+    </view>
+
+    <view class='item-detail'>
+      <rich-text nodes="{{nodes}}" bindtap="tap"></rich-text>
+    </view>
+  </view>
+
+</view>
+
+<view class="bottom_bar">
+  <view class="icon-item">
+    <image src="../../../resources/images/supplier.png"></image>
+    <view>
+       {{language['店铺']}}
+    </view>
+  </view>
+  <!--<view class="icon-item">-->
+  <!--<image src="../../../resources/images/collection0.png"></image>-->
+  <!--<view>-->
+  <!--收藏-->
+  <!--</view>-->
+  <!--</view>-->
+  <!--<view class="icon-item">-->
+  <!--<image src="../../../resources/images/server.png"></image>-->
+  <!--<view>-->
+  <!--客服-->
+  <!--</view>-->
+  <!--</view>-->
+  <button data-action='0' bindtap="actionSheetTap">{{language['一键铺货']}}</button>
+  <button data-action='1' bindtap="showTypeSelect">{{language['加入订货单']}}</button>
+  <button data-action='2' bindtap="showTypeSelect">{{language['立即订购']}}</button>
+</view>
+
+<action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetChange">
+  <view hidden='{{step!=1}}'>
+    <text class="up-store-label">铺货到</text>
+    <block wx:for-items="{{storeList}}" wx:key="{{item.shopName}}">
+      <action-sheet-item class="store-item" bindtap="bindItemTap" data-name="{{item.shopName}}" data-id="{{item.storeId}}">
+        <image src='{{item.img}}'></image>
+        <view class="shopName">{{item.shopName}}</view>
+        <view class='platform' style="color: #a6a6a6">{{item.platform}}店铺</view>
+      </action-sheet-item>
+    </block>
+    <action-sheet-cancel class="cancel">关闭</action-sheet-cancel>
+  </view>
+
+  <view class="action-sheet-container" hidden='{{step!=2}}'>
+    <view class="action-header">
+      <image src="{{imgs[1]}}"></image> 
+      <view class="name">{{name}}</view>
+      <text class='price'>￥{{prices.length>1?prices[prices.length-1].price+"~" +prices[0].price : prices[0].price}}</text>
+    </view>
+    <view class="type-scroller-container">
+      <scroll-view class="type_list" scroll-x scroll-with-animation scroll-left="{{row_scrollTop}}">
+        <view wx:for="{{typeList}}" class="{{curType===index?'selected_type':'type_item'}}" data-index='{{index}}' data-id='{{index}}' bindtap='selectType' wx:key="key" wx:for-index="index">{{item.type}}</view>
+      </scroll-view>
+    </view>
+    <view class="specs-container">
+      <swiper current="{{curType}}" bindchange='actionSwiperChange'>
+        <swiper-item wx:for="{{typeList}}" wx:key="key" wx:for-index="typeIndex" wx:for-item="typeItem">
+          <scroll-view scroll-y scroll-with-animation style='height:450rpx'>
+            <view class="spec-container" wx:for="{{typeItem.specs}}" wx:for-index="specIndex" wx:for-item="specItem" wx:key="key">
+              <view class="spec_num">
+                <view class="spec">{{specItem.spec}}</view>
+                <view bindtap='minus' data-type="{{typeIndex}}" data-spec="{{specIndex}}" class="num-operator" style='color:#a6a6a6'>-</view>
+                <view class="num">
+                  <input type='number' placeholder='0' value='{{specItem.num}}' bindblur='numInput' data-type="{{typeIndex}}" data-spec="{{specIndex}}"></input>
+                </view>
+                <view bindtap='plus' data-type="{{typeIndex}}" data-spec="{{specIndex}}" class="num-operator" style='color:#767676'>+</view>
+              </view>
+              <text decode="true" class="store">库存: &nbsp;{{specItem.store}}</text>
+            </view>
+          </scroll-view>
+        </swiper-item>
+      </swiper>
+    </view>
+    <view class="total-count">
+      <view class="price" style='width:{{15*(tools.numLen(totalPrice)+2)}}rpx'>￥{{totalPrice}}</view>
+      <view class='num-container' style='width:{{15*(tools.numLen(totalNum)+4)}}rpx'>
+        <view class="num">共</view>
+        <view class="num">{{totalNum}}</view>
+        <view class="num">{{dt[0].unit}}</view>
+      </view>
+      <view class="not-enough" hidden="{{!notEnough}}">未达起批量</view>
+    </view>
+    <view class="confirm-submit" bindtap='confirmAndSubmit'>确定</view>
+  </view>
+</action-sheet>
+
+<action-sheet hidden="{{cccInfoHidden}}" bindchange="cccInfoChange">
+  <scroll-view scroll-y='true' class='cccInfo'>
+    <view wx:for="{{cccInfo}}" wx:for-index="index" wx:key="key">
+      {{item[0]}}：{{item[1]}}
+    </view>
+  </scroll-view>
+</action-sheet>

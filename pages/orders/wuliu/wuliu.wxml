@@ -1,0 +1,133 @@
+<view class='g_con'>
+
+  <view class='topExpress'>
+
+    <view class='topExpress-left'>
+      <image src='/resources/images/demo1.jpg' style='width:60rpx;height:60rpx;border-radius:50%;'></image>
+    </view>
+    <view class='topExpress-right'>
+      <view class='topExpress-right-top'>圆通速递</view>
+      <view class='topExpress-right-middle'>运单号：813291235464788594</view>
+      <view class='topExpress-right-bottom'>官方电话 95554 ></view>
+    </view>
+  </view>
+
+  <view class='expressRecord'>
+    <view class='expressRecord-getAddress'>
+      <view class='expressRecord-top'>
+        <view class='getAddress-icon'>
+          收
+        </view>
+        <view class='getAddress-text'>[收货地址] 上海交通大学（闵行校区） </view>
+      </view>
+    </view>
+
+    <view class='noReach-online-top-close'></view>
+
+    <view class='expressRecord-single-close'>
+
+      <view class='expressRecord-single-noReach-online-top-close'>
+        <view class='online-top-closing'></view>
+        <view class='dot-closing'></view>
+        <view class='online-bottom'></view>
+      </view>
+      <view class='expressRecord-text'>
+        <view class='expressRecord-statusing'>运输中</view>
+        <view class='expressRecord-status-addressing'>【上海市】 您的包裹已到达 【吴泾站】，准备分派配送员</view>
+      </view>
+
+      <view class='expressRecord-dating'>
+        <view class='expressRecord-date-text'>
+          昨天
+        </view>
+        <view class='expressRecord-date-time'>
+          20:39
+        </view>
+      </view>
+    </view>
+
+
+    <!-- 单个物流记录点时间轴：已经过去的物流状态 -->
+    <view class='expressRecord-single-close'>
+      <view class='expressRecord-single-noReach-online-top-close'>
+        <view class='online-top-close'></view>
+        <view class='dot-close'></view>
+        <view class='online-bottom'></view>
+      </view>
+
+      <view class='expressRecord-text'>
+        <view class='expressRecord-status'></view>
+        <view class='expressRecord-status-address'>【上海市】 您的包裹已由物流公司揽收</view>
+      </view>
+
+      <view class='expressRecord-date'>
+        <view class='expressRecord-date-text'>
+          昨天
+        </view>
+        <view class='expressRecord-date-time'>
+          20:37
+        </view>
+      </view>
+    </view>
+
+    <view class='expressRecord-single-close'>
+      <view class='expressRecord-single-noReach-online-top-close'>
+        <view class='online-top-close'></view>
+        <view class='dot-close'></view>
+        <view class='online-bottom'></view>
+      </view>
+
+      <view class='expressRecord-text'>
+        <view class='expressRecord-status'>已揽件</view>
+        <view class='expressRecord-status-address'>您的包裹已揽收完成</view>
+      </view>
+
+      <view class='expressRecord-date'>
+        <view class='expressRecord-date-text'>
+          昨天
+        </view>
+        <view class='expressRecord-date-time'>
+          14:17
+        </view>
+      </view>
+    </view>
+
+
+
+
+
+    <view class='expressRecord-single-close'>
+      <view class='expressRecord-single-noReach-online-top-close'>
+        <view class='online-top-close'></view>
+        <view class='dot-close'></view>
+        <!-- 起始位置，下半个时间轴线不用 -->
+        <view class='online-bottom-start'></view>
+      </view>
+
+      <view class='expressRecord-text'>
+        <view class='expressRecord-status'>已发货</view>
+        <view class='expressRecord-status-address'>包裹正在等待揽收</view>
+      </view>
+
+      <view class='expressRecord-date'>
+        <view class='expressRecord-date-text'>
+          昨天
+        </view>
+        <view class='expressRecord-date-time'>
+          13:50
+        </view>
+      </view>
+    </view>
+
+
+
+
+
+
+
+
+  </view>
+
+
+
+</view>

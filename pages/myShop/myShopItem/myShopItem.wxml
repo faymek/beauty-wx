@@ -1,0 +1,39 @@
+<view class='header'>
+  <image src='{{shopImg}}'></image>
+  <view class='nameContainer'>
+    <view class="shopName">{{shopName}}</view>
+    <view class='platform'>{{platform}}店铺</view>
+  </view>
+</view>
+
+<view class='shopData'>
+  <view class="dataDetail">
+    <view class="font30White">{{monthSale}}</view>
+    <view class="font30White">本月销量</view>
+  </view>
+  <view class="dataDetail">
+    <view class="font30White">{{stock}}</view>
+    <view class="font30White">库存总量</view>
+  </view>
+  <view class="dataDetail">
+    <view class="font30White">{{kind}}</view>
+    <view class="font30White">产品种类</view>
+  </view>
+</view>
+
+<view wx:for="{{stockItems}}" wx:key="key" class='stockItem'>
+  <image src='{{item.img}}'></image>
+  <view class='stockItemData'>
+    <view class="stockItemName">{{item.name}}</view>
+    <view class='stockItemStock'>{{item.isStock===true?'库存':'预购'}}{{item.num}}件</view>
+    <view class='stockItemMoney'>
+      <view class='stockItemPrice'>￥{{item.price}}</view>
+      <view>/</view>
+      <view class='stockItemProfit'>赚{{item.profit}}</view>
+    </view>
+    <view class='stockItemButtons'>
+      <view class='leftButton'>置顶</view>
+      <view class='rightButton'>下架</view>
+    </view>
+  </view>
+</view>

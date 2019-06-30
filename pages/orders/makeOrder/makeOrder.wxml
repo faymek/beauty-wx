@@ -1,0 +1,86 @@
+<scroll-view scroll-y='{{ifScroll}}' style="height: 100%;">
+<view class="address">
+  <view class="line">
+    <text>收货地址：</text>  
+  </view>
+</view>
+<view class="orders">
+  <view wx:for="{{orders}}" wx:key="key">
+    <view class="orderBox">
+      <view class="line" style="min-height: 60rpx">
+        <text>订单{{index+1}}：{{item.supplierName}}</text>
+      </view>
+      <view class="division"/>
+      <view wx:for="{{item.Items}}" class="orderItems">
+        <view class="itemBox" url="">
+          <image class="itemThumb" src="{{item.img}}"/>
+          <text class="itemTitle">{{item.name}}</text>
+        </view>
+        <view class="itemInfo">
+          <view class="itemType">单价:¥{{item.price[0]}}/{{item.sale[1]}}</view>
+          <view class="itemCount">
+            <text class="orders-price">¥{{item.price[0]}}</text>
+            <text class="orders-count">×{{item.num}} {{item.sale[1]}}</text>
+          </view>
+        </view>
+      </view>  
+    </view>
+    <view class="orderBox">
+      <view class="line">
+        <text>交易方式</text>
+        <view class="line-right">担保交易</view>
+        <view class="line-image"><image src="{{right}}"/></view>
+      </view>
+      <view class="division"/>
+      <view class="line">
+        <text>店铺优惠</text>
+        <view class="line-right">满优惠(免快递)</view>
+        <view class="line-image"><image src="{{right}}"/></view>
+      </view>
+      <view class="division"/>
+      <view class="line">
+        <text>运费</text>
+        <view class="line-right">¥0.00</view>
+        <view class="line-image"><image src="{{right}}"/></view>
+      </view>
+    </view>
+
+  </view>
+  <view class="account">
+    <view class="account-left">
+      <text>货款总计：¥{{totalPrice}}</text>
+      <text>运费总计：¥{{totalPrice}}</text>
+      <text>店铺优惠：¥0.00</text>
+    </view>
+    <view class="account-right">
+      <text>订单总额：<text style="color:red">¥{{2*totalPrice}}</text></text>
+    </view>
+  </view>
+
+  <view class="footer">
+    <text class="total-text">应付总额(含运费):</text>
+    <text class="total-price">¥{{2*totalPrice}}</text>
+    <button size="mini" catchtouchstart="makeOrder" class="submit">提交订单</button>
+  </view>  
+
+  <view class="modalDlg" wx:if="{{showModal}}">
+    <view class='close_mask' bindtap="close_mask">×</view>
+    <view class="modal-title">支付</view>
+
+    <view class="modal-content">
+      <view class="line">跨境电商</view>
+      <view class="price">¥<text style="font-size: 50rpx;padding-left: 5rpx">{{2*totalPrice}}</text></view>
+    </view>
+    <view class="modal-pay">
+      <image style="width: 40rpx; height: 40rpx;" src="{{coin}}"/>
+      <text style="padding-left: 10rpx">零钱</text>
+    </view>
+    <view class='modal-confirm' bindtap='submit'>
+      <text style="min-height: 20%" font-size="35rpx" >确认支付</text>
+    </view>
+    </view>
+  <view class="mask" wx:if="{{showModal}}"></view>
+
+  <view style="height: 90rpx"/>
+</view>
+</scroll-view>

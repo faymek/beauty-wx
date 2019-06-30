@@ -1,0 +1,10 @@
+<view class="container">
+  <view class="top">
+    <view style="font-size: 35rpx; color: #32B531">支付成功</view>
+  </view>
+  <view class="middle">
+    <text style="font-size: 35rpx;">跨境电商</text>
+    <text style="font-size: 50rpx">¥ {{price*2}}</text>
+  </view>
+  <view class="bottom" bindtap="complete">完成</view>
+</view>

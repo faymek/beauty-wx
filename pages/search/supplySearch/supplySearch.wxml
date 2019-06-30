@@ -1,0 +1,32 @@
+<import src="/templates/supplyItem2/supplyItem2" />
+<view class="header">
+  <view class="sideButton" bindtap='back'>
+    <image src='../../../resources/images/back.png'></image>
+  </view>
+  <view class='searchInput'>
+    <view style='width:95%;height:80%'>
+      <input placeholder='{{search}}' ></input>
+    </view>
+  </view>
+  <view class="sideButton"></view>
+</view>
+
+<view class='sortMethods'>
+  <view class='sortMethod' bindtap='changeMethod' data-method='综合'>
+    <view style='height:99%;width:100%;font-size:35rpx;font-weight:600;display:flex;align-items:center;justify-content:center' class="{{sortMethod==='综合'?'sortMethod-on':''}}">综合
+    </view>
+    <view style='height:1%;width:90rpx;' class="{{sortMethod==='综合'?'sortSignal':''}}"></view>
+  </view>
+  <view class='sortMethod' bindtap='changeMethod' data-method='诚信通年份'>
+    <view style='height:99%;width:100%;font-size:35rpx;font-weight:600;display:flex;align-items:center;justify-content:center' class="{{sortMethod==='诚信通年份'?'sortMethod-on':''}}">诚信通年份
+    </view>
+    <view style='height:1%;width:190rpx;' class="{{sortMethod==='诚信通年份'?'sortSignal':''}}"></view>
+  </view>
+  <view class='sortMethod' bindtap='changeMethod' data-method='距离'>
+    <view style='height:99%;width:100%;font-size:35rpx;font-weight:600;display:flex;align-items:center;justify-content:center' class="{{sortMethod==='距离'?'sortMethod-on':''}}">距离
+    </view>
+    <view style='height:1%;width:90rpx;' class="{{sortMethod==='距离'?'sortSignal':''}}"></view>
+  </view>
+</view>
+
+<template is="supplyItem2" wx:for="{{suppliers}}" wx:key="key" data="{{...item}}"></template>

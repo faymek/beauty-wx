@@ -1,0 +1,70 @@
+@import '/templates/supplyItem2/supplyItem2.wxss';
+.navbar {
+  display: flex;
+  flex-direction: row;
+  font-size: 30rpx;
+  text-align: center;
+  padding-top: 20rpx;
+}
+.navbar-active {
+  width: 25%;
+  border-bottom: 2px solid red;
+  margin: 0 20rpx 0 20rpx;
+}
+.navbar-inactive {
+  width: 25%;
+  margin: 0 20rpx 20rpx 20rpx;
+}
+
+.more-button{
+  width: 35rpx;
+  height: 30rpx;
+  position: absolute;
+  right: 40rpx;
+  margin-top: 40rpx;
+  text-align: center;
+}
+
+.button2{
+  position: absolute;
+  right: 20rpx;
+  width: 120rpx;
+  text-align: center;
+  border: 1rpx solid#C5C5C5;
+  border-radius: 20rpx;
+  margin: 0 10rpx 0 10rpx;
+  padding: 2rpx 0 2rpx 0
+}
+
+.del{  
+  width: 160rpx;  
+  height: 100%;  
+  background-color: red; 
+  color: white; 
+  position: absolute;  
+  top: 0;  
+  right: -160rpx;  
+  display: flex;  
+  justify-content: center;  
+  align-items: center;  
+}  
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.action {
+  border-top: 1rpx solid #C5C5C5;
+  padding: 20rpx 0;
+  font-size: 30rpx;
+  min-width: 100%;
+  text-align: center;
+}
+
+.supplier-title {
+  color: #a6a6a6;
+  padding: 10rpx 0;
+  font-size: 25rpx;
+}

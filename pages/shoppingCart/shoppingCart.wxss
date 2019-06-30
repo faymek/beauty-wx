@@ -1,0 +1,150 @@
+@import '../../templates/goodItemCard/goodItemCard.wxss';
+@import '../../templates/recommend/recommend.wxss';
+.cart-all{
+  background-color:#F4F4F4;
+  padding: 0 20rpx 0 20rpx;
+}
+
+.cart-shop{
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  padding: 20rpx;
+  border-radius: 20rpx;
+}
+
+.cart-shopName{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 25rpx;
+}
+
+.cart-shopTitle{
+  padding-left: 25rpx;
+}
+
+.cart-blank{
+  height: 20rpx;
+}
+
+.cart-box{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 25rpx;
+}
+
+.cart-box .cart-thumb{
+  width: 180rpx;
+  height: 180rpx;
+  padding: 10rpx;
+}
+
+.cart-box .cart-count{
+  position: relative;
+  top:20rpx;
+}
+
+.cart-itemInfo{
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+}
+
+.cart-itemInfo .cart-title{
+  display: inline-block;
+  padding-top: 20rpx;
+  height: 105rpx;
+  width: 400rpx;
+  overflow: hidden;
+}
+
+.cart-itemInfo .cart-price{
+  position: absolute;
+  color: red;
+}
+
+.cart-itemInfo .cart-count{
+  display: flex;
+  flex-direction: row;
+}
+
+.cart-change-count{
+  font-size: 28rpx;
+  display: flex;
+  position: absolute;
+  left: 250rpx;
+}
+
+.cart-change-count text{
+  display: inline-block;
+  text-align: center;
+}
+
+.cart-change-count .cart-count-add{
+  border: 1rpx solid #EEEEEE;
+  border-left: 0rpx;
+  width: 30rpx;
+  color: #A3A3A3;
+}
+
+.cart-change-count .cart-count-down{
+  border: 1rpx solid #EEEEEE;
+  border-right: 0rpx;
+  width: 30rpx;
+  color: #DFDFDF;
+}
+
+.cart-change-count .cart-count-num{
+  width: 90rpx;
+  border: 1rpx solid #EEEEEE;
+  color: #A3A3A3;
+}
+
+.cart-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  font-size: 25rpx;
+  background: #FFFFFF;
+}
+
+.cart-total-text{
+  position: relative;
+  left: 300rpx;
+}
+
+.cart-total-price{
+  position: relative;
+  left: 330rpx;
+  width: 50rpx;
+  color: red;
+}
+
+.cart-submit {
+  position: relative;
+  left: 200rpx;
+  background: #FF7111;
+  color: white;
+}
+
+.cart-icon {
+  font-size: 16rpx;
+  width: 60rpx;
+  text-align: center;
+}
+
+.cart-recommend {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-recommend-title {
+  align-self: center;
+  padding-bottom: 20rpx;
+}

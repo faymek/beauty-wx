@@ -1,0 +1,26 @@
+<view class="top">
+  <text style="padding-top: 150rpx;font-size: 35rpx;color: white;max-width: 80%">{{info.goodsName}}</text>
+  <text style="padding-top: 20rpx;font-size: 30rpx;color: #CEC0BD">中国物品编码中心</text>
+</view>
+<view class="middle">
+  <view class="box" wx:if="{{info.brand!=''}}">
+    <text>商品品牌</text>
+    <text style="color: #909090">{{info.brand}}</text>
+  </view>
+  <view class="box" wx:if="{{info.barcode!=''}}">
+    <text>商品条码</text>
+    <text style="color: #909090">{{info.barcode}}</text>
+  </view>
+  <view class="box" wx:if="{{info.supplier!=''}}">
+    <text>供应商</text>
+    <text style="color: #909090">{{info.supplier}}</text>
+  </view>
+  <view class="box" wx:if="{{info.standard!=''}}">
+    <text>商品规格</text>
+    <text style="color: #909090">{{info.standard}}</text>
+  </view>
+  <view class="box" wx:if="{{info.price!=''}}">
+    <text>建议零售价</text>
+    <text style="color: #909090">￥{{info.price}}</text>
+  </view>
+</view>

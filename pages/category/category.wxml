@@ -1,0 +1,40 @@
+<import src="../../templates/searchBox/searchBox.wxml" />
+<import src="../../templates/goodItem/goodItem.wxml"/>
+
+<template is="searchBox"></template>
+
+<view class="body">
+  <view class="left">
+    <scroll-view scroll-y style="height:{{windowHeight - 100}}rpx">
+      <view wx:for="{{category}}" wx:for-index="index" wx:for-item="item" wx:key="idx">
+        <view data-id='{{item.id}}' data-index='{{index}}' class="cate-list {{curIndex === index?'on':''}}" bindtap='switchTab'>
+          {{item.name}}
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="right_cate" >
+    <view>
+      <scroll-view class="status_list" scroll-x scroll-with-animation scroll-left="{{row_scrollTop}}">
+        <view wx:for="{{type_list}}" 
+        class="{{curStatus===index?'selected_status':'status_item'}}" 
+        data-index='{{index}}'
+        data-id='{{index}}'
+        bindtap='selectStatus'
+        wx:key="key" wx:for-index="index">{{item}}</view>
+      </scroll-view>
+    </view>
+    <scroll-view scroll-y style="height:{{windowHeight - 184}}rpx" scroll-top="{{right_scrollTop}}">
+      <view wx:for="{{goodItems}}" wx-for-index="index" wx:for-item="item" wx:key="key">
+        <view class="cate_entry">
+          <template is="goodItem" data="{{...item,...{height:240,nameNum:28,index:index} }}"></template>
+        </view>
+      </view>
+      <view class="tail">—— 到底啦 ——</view>
+    </scroll-view>
+  </view>
+</view>
+
+<view class="footer">
+</view>
+

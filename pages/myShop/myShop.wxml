@@ -1,0 +1,118 @@
+<view class='header'>
+  <image src='{{userAvatar}}'></image>
+  <view class="userName">{{userName}}</view>
+</view>
+
+<view class='shopData'>
+  <view class="dataDetail">
+    <view class="font30White">{{todayOrder}}</view>
+    <view class="font30White">今日订单(笔)</view>
+  </view>
+  <view class="dataDetail">
+    <view class="font30White">{{monthSale}}</view>
+    <view class="font30White">本月销售(元)</view>
+  </view>
+  <view class="dataDetail">
+    <view class="font30White">{{shopNum}}</view>
+    <view class="font30White">跨境店铺</view>
+  </view>
+</view>
+
+<!-- <view class="orderManagement">
+  <view class='checkAllOrder'>
+    <view class="title">订单管理</view>
+    <view class="tap">
+      <view>全部订单</view>
+      <image src='../../resources/images/right.png'></image>
+    </view>
+  </view>
+  <view class='orderStatus'>
+    <view class='orderStatusItem'>
+      <image src='../../resources/images/waitToPay.png'></image>
+      <view>待付款</view>
+    </view>
+    <view class='orderStatusItem'>
+      <image src='../../resources/images/waitToTake.png'></image>
+      <view>待收货</view>
+    </view>
+    <view class='orderStatusItem'>
+      <image src='../../resources/images/done.png'></image>
+      <view>已完成</view>
+    </view>
+    <view class='orderStatusItem'>
+      <image src='../../resources/images/afterSaleService.png'></image>
+      <view>售后/退款</view>
+    </view>
+  </view>
+</view> -->
+
+<view class='shopBinding' wx:if="{{myShops.length===0}}">
+  <view class='fontCenter'>未绑定店铺</view>
+</view>
+
+<view wx:for="{{myShops}}" wx:key="key" class='myShopItem' bindtap='toMyShopItem'>
+  <image src='{{item.img}}'></image>
+  <view class='nameContainer'>
+    <view class="shopName">{{item.shopName}}</view>
+    <view class='platform'>{{item.platform}}店铺</view>
+  </view>
+  <view class='myShopData'>
+    <view class='dataFont'>{{item.monthSale}}</view>
+    <view class='dataFont'>本月销量</view>
+  </view>
+  <view class='myShopData border'>
+    <view class='dataFont'>{{item.stock}}</view>
+    <view class='dataFont'>库存总量</view>
+  </view>
+  <view class='myShopData'>
+    <view class='dataFont'>{{item.kind}}</view>
+    <view class='dataFont'>产品种类</view>
+  </view>
+</view>
+
+<view class='order'>新的订单</view>
+<view class="order-all">
+  <view class="order-container">
+    <!-- wx:for 遍历进货单 -->
+    <view wx:for="{{orderItems}}" wx:for-index="orderindex" wx:key="cartKey" wx:for-item="orderItem">
+      <view class="order-one">
+        <view class="order-orderHead">
+          <icon class="order-icon" size="22" wx:if="{{orderItem.selectAllStatus}}" type="success" color="red" bindtap="selectOrderList" data-index="{{orderindex}}" />
+          <icon class="order-icon" size="22" wx:else type="circle" bindtap="selectOrderList" data-index="{{orderindex}}" />
+          <text decode="{{true}}" space="{{true}}" class="order-orderId">订单号:&nbsp;&nbsp;{{orderItem.orderId}}</text>
+        </view>
+        <!-- wx:for 遍历每个订单商品 -->
+        <view wx:for="{{orderItem.Items}}" wx:key="key">
+          <view class="order-box" url="">
+            <icon class="order-icon" size="22" wx:if="{{item.selected}}" type="success" color="red" bindtap="selectItem" data-item="{{orderItem}}" data-index="{{index}}" data-orderindex="{{orderindex}}" />
+            <icon class="order-icon" size="22" wx:else type="circle" bindtap="selectItem" data-item="{{orderItem}}" data-index="{{index}}" data-orderindex="{{orderindex}}" />
+            <image class="order-thumb" src="{{item.img}}" />
+            <view class="order-itemInfo">
+              <view class="name_price_num">
+                <view class="name">{{item.name}}</view>
+                <view class='price_num'>
+                  <view class="price">￥{{item.price}}</view>
+                  <view class="num">×{{item.num}}</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="order-blank" />
+    </view>
+  </view>
+  <view class="footer-blank"></view>
+  <view class="cart-footer">
+    <icon class="cart-icon" size="22" wx:if="{{selectAllStatus}}" type="success" color="red" bindtap="selectAll" />
+    <icon class="cart-icon" size="22" wx:else type="circle" bindtap="selectAll" />
+    <text class="choose-all">全选</text>
+    <view class="get-order">
+      <text>拉取订单</text>
+      <image src='/resources/images/refresh.png'></image>
+    </view>
+    <text class="cart-total-text">合计:</text>
+    <text class="cart-total-price">¥{{totalPrice}}</text>
+    <view size="mini" bindtap="makeOrder" class="cart-submit">结算</view>
+  </view>
+</view>

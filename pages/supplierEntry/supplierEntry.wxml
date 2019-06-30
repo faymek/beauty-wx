@@ -1,0 +1,31 @@
+<view class="imagesize">
+  <image class="in-image"  src="http://a1.qpic.cn/psb?/V13kVVqp2eI9aW/Yi7IT9Cx6yHn6C.1Rhqmqo6RiOlUqHh*VrY5.YjfL.g!/m/dLgAAAAAAAAAnull&bo=kwHdAgAAAAARB30!&rf=photolist&t=5.jpg"></image>
+</view>
+
+<view class="block-container">
+  <view class='inputContainer'>
+    <input value='{{contactPhone}}' placeholder='1.请您尽量选择光照条件良好的照片' placeholder-class='placeHolder'></input>
+  </view>
+  <view class='inputContainer' style='flex-direction:row'>
+    <input  placeholder='2.请您尽量选择正脸面对镜头的照片'  style="width:420rpx;" placeholder-class='placeHolder'></input>
+  </view>
+  <view class='inputContainer' >
+    <input value='{{email}}' placeholder='3.请您尽量选择未经过美颜处理的照片' placeholder-class='placeHolder'></input>
+  </view>
+  <view class="enterprise-qualification">
+    <view>我的肤质照片</view>
+    <view style='width:100%;display:flex;justify-content:center'>
+      <view class='photoContainer'>
+        <image wx:for="{{images}}" wx:key="key" src='{{item}}'></image>
+        <view wx:if="{{images.length<=8}}" class="background-img"  bindtap="addImage">
+          <image src='/resources/images/tianjiatupian.png'></image>
+          <view class="inner-text">上传图片</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='btn' bindtap="upImage">
+    一次请上传一张
+  </view>
+
+</view>

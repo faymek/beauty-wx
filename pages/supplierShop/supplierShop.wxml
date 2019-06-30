@@ -1,0 +1,45 @@
+<import src="../../templates/goodItemCard/goodItemCard.wxml"/>
+<view class="supplierInfo">
+  <view class="avatar" bindtap='toSupplierDetail'>
+    <image src="http://www.oooobb.com/UpLoad/Image/2017-10-28/20171028152154461.jpg"/>
+  </view>
+  <view class="baseInfo">
+    <text>测试店铺有限公司</text>
+    <text style="font-size: 25rpx">产品数量：10086</text>
+  </view>
+  <view class="follow">
+    <image src="{{star}}"/>
+    <text style="font-size: 25rpx; color: white">关注</text>
+  </view>
+</view>
+<view class='navbar'>
+  <view class="navbar{{currentTab==index?'-active':'-inactive'}}" bindtap='navbarTap' wx:for="{{navbar}}" wx:key="key" data-index="{{index}}">
+      {{item}}
+  </view>
+</view>
+
+<!-- 首页 -->
+<view hidden="{{currentTab != 0}}" class='recommend'>
+  <text class="recommend-title">热卖商品？点这里</text>
+  <view style="background-color: #F4F4F4">
+  <template is="goodItemCard" data="{{...item}}" wx:for="{{Items}}" wx:for-index="index" wx:key="key"></template>
+  </view>
+</view>
+
+<!-- 全部商品 -->
+<view hidden="{{currentTab != 1 && currentTab != 2}}" class='allGoods'>
+  <view class="apply">
+    <view class="line">
+      <text style="color: white">商务合作</text>
+      <view class="arrow"/>
+    </view>
+  </view>
+  <view class='sortNavbar'>
+    <view class="sort{{currentSortTab==index?'-active':'-inactive'}}" bindtap='sortTap' wx:for="{{sortNavbar}}" wx:key="key" data-index="{{index}}">
+        {{item}}
+    </view>
+  </view>
+  <view style="background-color: #F4F4F4">
+    <template is="goodItemCard" data="{{...item}}" wx:for="{{Items}}" wx:for-index="index" wx:key="key"></template>
+  </view>
+</view>

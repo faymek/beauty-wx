@@ -1,0 +1,31 @@
+<import src="../../../templates/goodItem/goodItem.wxml" />
+
+<view class="header">
+  <view class="sideButton" bindtap='back'>
+    <image src='../../../resources/images/back.png'></image>
+  </view>
+  <view class='searchInput'>
+    <view style='width:95%;height:80%'>
+      <input placeholder='{{search}}' ></input>
+    </view>
+  </view>
+  <view class="sideButton"></view>
+</view>
+
+<view class="sortMethods">
+  <view class="sortMethod {{sortMethod==='综合'?'sortMethod-on':''}}" bindtap='comprehensiveMethod'>综合</view>
+  <view class="sortMethod {{sortMethod==='成交额'?'sortMethod-on':''}}" bindtap='turnoverMethod'>成交额</view>
+  <view class="sortMethod  {{sortMethod==='价格'?'sortMethod-on':''}}" style='flex-direction:row' bindtap='priceMethod'>
+    <view style='margin-right:10rpx'>价格</view>
+    <image wx:if="{{sortMethod==='价格' && !smallFirst}}" src="../../../resources/images/down1.png" style='width:20rpx;height:20rpx'></image>
+    <image wx:elif="{{sortMethod==='价格' && smallFirst}}" src="../../../resources/images/up1.png" style='width:20rpx;height:20rpx'></image>
+  </view>
+  <view class='sortMethod'>
+    <image src='../../../resources/images/filter.png' style='width:30rpx;height:30rpx'></image>
+    <view>筛选</view>
+  </view>
+</view>
+
+<view wx:for="{{goodItems}}" wx:for-index="index" wx:key="key">
+  <template is="goodItem" data="{{...item,...{height:270,nameNum:32} }}"></template>
+</view>

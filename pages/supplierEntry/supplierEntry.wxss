@@ -1,0 +1,173 @@
+page{
+  height: 100%
+}
+
+.imagesize{
+  display: flex;
+  height: 100%;
+  width:750rpx;
+  z-index:-1;
+  position: fixed;
+  top:0px;
+  left: 0px
+}
+
+.in-image{
+  width:100%;
+  height: 100%;
+}
+
+.block-container{
+  width:100%;
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.inputContainer{
+  width:600rpx;
+  height:90rpx;
+  display: flex;
+  align-items: center;
+  padding-left: 30rpx;
+  font-size: 30rpx;
+  border: 1rpx solid #cdcdcd;
+  border-radius: 40rpx;
+  background: rgba(0, 0, 0, 0.15);
+  opacity: 0.9;
+  margin-bottom: 70rpx
+}
+
+.inputContainer input{
+  width:600rpx;
+  height:60rpx;
+}
+
+.placeHolder{
+  color:#ffffff;
+}
+
+.get-validate{
+  width:180rpx;
+  padding-left: 30rpx;
+  color:#ffffff;
+  height:70rpx;
+  line-height: 70rpx;
+  border-left: #cdcdcd 1rpx solid;
+}
+
+.enterprise-qualification{
+  width:650rpx;
+  border: 3rpx dashed #cdcdcd;
+  border-radius: 15rpx;
+  display: flex;
+  flex-direction: column;
+  font-size: 30rpx;
+  color:#ffffff;
+  padding-left: 25rpx;
+  padding-top:20rpx;
+  background: rgba(0, 0, 0, 0.15);
+  margin-bottom: 70rpx;
+
+}
+
+.photoContainer{
+  width:600rpx;
+  display: flex;
+  flex-flow: row wrap;
+  margin-top:20rpx;
+  padding-bottom: 20rpx;
+}
+
+.photoContainer image{
+  margin:10rpx;
+  width:180rpx;
+  height: 180rpx;
+}
+
+.background-img{
+  margin:10rpx;
+  width:180rpx;
+  height: 180rpx; 
+  position: relative;
+}
+
+.background-img image{
+  position: absolute;
+  top:0rpx;
+  left: 0rpx;
+  z-index:1;
+  height: 180rpx;
+  width:180rpx;
+}
+
+.background-img .inner-text{
+  position: absolute;
+  bottom: 30rpx;
+  left:10rpx;
+  font-size:20rpx;
+  z-index:2;
+  width:100%;
+  text-align: center
+}
+
+.btn{
+  width:600rpx;
+  height:90rpx;
+  font-size: 35rpx;
+  border: 1rpx solid #cdcdcd;
+  border-radius: 40rpx;
+  background: rgba(241, 212, 164, 0.671);
+  opacity: 0.9;
+  text-align: center;
+  line-height: 90rpx;
+  font-weight: 700;
+  color:#FFFFFF;
+}
+
+
+
+
+
+
+
+
+
+.padding{
+  width:100%;
+  height:200rpx;
+}
+
+
+
+
+
+
+
+
+
+.supplierEntry{
+  height:130rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 60rpx;
+}
+
+.application{
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height:80%;
+  width: 93%;
+  border: 5rpx solid #FE5400;
+  color:#FE5400;
+  font-size: 37rpx;
+  font-weight: 500;
+}

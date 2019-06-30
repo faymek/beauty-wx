@@ -1,0 +1,60 @@
+<!--pages/shoppingCart/shoppingCart.wxml-->
+<import src="../../templates/goodItemCard/goodItemCard.wxml"/>
+<import src="../../templates/recommend/recommend.wxml"/>
+<view wx:if="{{cartItems.length==0}}">
+  <view class="cart-empty">
+    <text>进货单为空</text>
+  </view>
+</view>
+<view wx:else class="cart-all">
+  <view class="cart-container">
+    <!-- wx:for 遍历货单 -->
+    <view wx:for="{{cartItems}}" wx:for-index="shopIndex" wx:key="cartKey" wx:for-item="cartItem">
+      <view class="cart-shop">
+        <view class="cart-shopName">
+          <icon class="cart-icon" size="22" wx:if="{{cartItem.selectAllStatus}}" type="success" color="red" bindtap="selectShopList" data-index="{{shopIndex}}"/>
+          <icon class="cart-icon" size="22" wx:else type="circle" bindtap="selectShopList" data-index="{{shopIndex}}"/>
+          <text class="cart-shopTitle">{{cartItem.supplierName}}</text>
+        </view>
+        <!-- wx:for 遍历每个商店商品 -->
+        <view wx:for="{{cartItem.Items}}" wx:key="key">
+          <!-- 点击商品可以跳转到商品详情 -->
+          <view class="cart-box" url="">
+            <icon class="cart-icon" size="22" wx:if="{{item.selected}}" type="success" color="red" bindtap="selectItem" data-item="{{cartItem}}" data-index="{{index}}"/>
+            <icon class="cart-icon" size="22" wx:else type="circle" bindtap="selectItem" data-item="{{cartItem}}" data-index="{{index}}"/>
+            <navigator url="">
+              <image class="cart-thumb" src="{{item.img}}"/>
+            </navigator>
+            <view class="cart-itemInfo">
+              <text class="cart-title">{{item.name}}</text>
+              <view class="cart-count">
+                <text class="cart-price">¥{{item.price[0]}}</text>
+                <view class="cart-change-count">
+                  <text class="cart-count-down" bindtap="minusCount" data-item="{{cartItem}}" data-index="{{index}}">-</text>
+                  <text class="cart-count-num">{{item.num}}</text>
+                  <text class="cart-count-add" bindtap="addCount" data-item="{{cartItem}}" data-index="{{index}}">+</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="cart-blank"/>
+    </view>
+  </view>
+
+  <!-- 猜你喜欢模板 -->
+  <template is="recommend" data="{{...cartItems[0]}}"></template>
+
+  <view style="height: 100rpx"/>
+
+  <!-- 下部操作栏 -->
+  <view class="cart-footer">
+    <icon class="cart-icon" size="22" wx:if="{{selectAllStatus}}" type="success" color="red" bindtap="selectAll"/>
+    <icon class="cart-icon" size="22" wx:else type="circle" bindtap="selectAll"/>
+    <text>全选</text>
+    <text class="cart-total-text">合计:</text>
+    <text class="cart-total-price">¥{{totalPrice}}</text>
+    <button size="mini" bindtap="makeOrder" class="cart-submit">结算</button>
+  </view>
+</view>

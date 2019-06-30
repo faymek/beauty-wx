@@ -1,0 +1,27 @@
+<template name='supplyItem2'>
+  <wxs src="../../utils/subutil.wxs" module="tools"/>
+  <view class='part'>
+    <view class='subPart'>
+      <view style="display: flex;">
+        <image class='supplierImg' src='{{img}}'></image>
+        <view style='font-weight: 500;font-size:28rpx;' class='lineContainer'>{{name}}</view>
+      </view>
+      <view class='lineContainer'>
+        <view class="what">经营模式：</view>
+        <view>{{model}}</view>
+      </view>
+      <view class='lineContainer'>
+        <view class="what">主打产品：</view>
+        <view>{{tools.sub2(product,18)}}</view>
+      </view>
+      <view class='lineContainer labels'>
+        <view >{{old}}年</view>
+        <view>{{productNum}}件产品|{{customerNum}}位买家</view>
+        <view>{{place}}</view>
+      </view>
+    </view>
+    <view class='items'>
+      <image wx:for='{{items}}' class='itemImg' src='{{item}}'></image>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,9 @@
+<import src="../goodItemCard/goodItemCard.wxml"/>
+<template name="recommend">
+  <view class="cart-recommend">
+    <text class="cart-recommend-title">猜你喜欢</text>
+    <view class="cart-recommend-items">
+      <template is="goodItemCard" data="{{...item}}" wx:for="{{Items}}" wx:for-index="index" wx:key="key"></template>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,173 @@
+@import '../../templates/goodItemCard/goodItemCard.wxss';
+@import '/templates/supplyItem2/supplyItem2.wxss';
+
+.header{
+  background: #fafafa;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size:34rpx;
+  font-weight:400;
+  z-index:1;
+  position: sticky;
+  top:0;
+  justify-content:center;
+}
+
+.header .product{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header .supplier{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header .word{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin:8px 40rpx;
+}
+
+.header .pad{
+  height:5rpx;
+  width:140rpx;
+}
+
+::-webkit-scrollbar{
+width: 0;
+height: 0;
+color: transparent;
+}
+
+.header image{
+  margin-left:45rpx;
+  width:60rpx;
+  height:60rpx;
+}
+
+.header .on{
+  font-weight: 500;
+  color:#fe5400;
+  margin:0 10rpx;
+}
+
+.header .padOn{
+  background: #fe5400
+}
+
+.customize {
+  display: flex;
+}
+
+.customize image{
+  border-radius: 10rpx;
+  margin-left: 20rpx;
+  width: 400rpx;
+  height: 250rpx;
+}
+
+.customize .content {
+  margin: 0 10rpx;
+  font-size:29rpx;
+}
+
+.priceLabel {
+  font-size:25rpx;
+  color:red;
+  margin-right:10rpx;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+
+}
+.price {
+  display:flex;
+  color:red;
+  margin: 8rpx 0;
+}
+.priceValue {
+  font-size:42rpx;
+}
+
+.sub-info {
+  color: grey;
+  font-size:23rpx;
+}
+
+.button {
+  border:1rpx solid #FE5400;
+  color:#FE5400 !important;
+  background:rgba(255, 152, 118, 0.31) !important;
+}
+
+.top-button-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10rpx;
+  text-align: center;
+}
+
+.top-button {
+  width: 180rpx;
+  min-height: 55rpx;
+  background: white;
+  font-size: 30rpx;
+}
+
+.top-button-selected {
+  width: 180rpx;
+  min-height: 55rpx;
+  border-bottom: 1rpx solid red;
+  color: #FE5400;
+  background: white;
+  font-size: 30rpx;
+}
+
+.publish-button {
+  position: absolute;
+  left: 75%;
+  width: 150rpx;
+  height: 55rpx;
+  border:1rpx solid #FE5400;
+  color:#FE5400 !important;
+  background:rgba(255, 152, 118, 0.31) !important;
+}
+
+button {
+  font-size:26rpx;
+  padding: 0 40rpx;
+  line-height:2;
+  height:61rpx;
+}
+
+.relatedList {
+  display: flex;
+  font-size: 20rpx;
+}
+
+.relatedList image {
+  width: 100%;
+  height: 140rpx;
+  border-radius: 10rpx;
+}
+
+.relatedList > view {
+  margin: 0 10rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.related {
+  padding: 0 10rpx;
+}
+.related > text {
+  font-size:24rpx;
+  padding: 10rpx;
+}

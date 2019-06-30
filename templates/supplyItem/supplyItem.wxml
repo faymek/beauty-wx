@@ -1,0 +1,23 @@
+<template name="supplier">
+  <view class="contain">
+    <view class='avatar'>
+      <image src="{{avatar}}"></image>
+    </view>
+    <view class="s_detail">
+      <view class='row'>
+        <view class='s_name'>{{name}}</view>
+        <view class="change_status">...</view>
+      </view>
+      <view class="s_status">{{status}}</view>
+      <view class='row'>
+        <view wx:for="{{imgs}}" wx:for-item="img" wx:for-index="index" wx:key="key">
+          <image src='{{img}}'></image>
+        </view>
+      </view>
+      <view class='row'>
+        <view class='s_price'>近一年累计采购{{price}}元</view>
+        <view class="cooperate">▷</view>
+      </view>
+    </view>
+  </view>
+</template>

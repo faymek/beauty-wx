@@ -1,0 +1,65 @@
+<view class="header">
+  <view class="product {{recommendType===0?'on':''}}" data-recommendType="0" bindtap='chooseRecommendType'>
+    <view class="word">根据您的特点，我们为您推荐：</view>
+      </view>
+    <!-- <image src="/resources/images/tabBar/category0.png" bindtap='toCate'></image> -->
+</view>
+
+<import src="../../templates/goodItemCard/goodItemCard.wxml" />
+<import src="/templates/supplyItem2/supplyItem2" />
+
+<view hidden="{{recommendType}}" class="top-button-group">
+  <view style="position:relative" 
+    class="{{selectedNum==0?'top-button':'top-button-selected'}}" bindtap='selectChange'>全部</view>
+  <view style="position:relative"
+    class="{{selectedNum==0?'top-button-selected':'top-button'}}" bindtap='selectChange'>我的</view>
+  
+</view>
+
+<swiper current="{{recommendType}}" style='height:{{windowHeight-100}}rpx' bindchange='swiperChange'>
+  <swiper-item>
+    <scroll-view scroll-y='true'  style='height:{{windowHeight-100}}rpx' bindscrolltolower="loadGood" lower-threshold="30">
+        <view style="padding: 5px 0;margin: 10px 1px;wxcs_style_margin: 20rpx 0;border-bottom: 5px solid #eeeeee;" wx:for="{{recommandItems}}" wx:key="key">
+          <view class='customize' >
+            <image mode='aspectFill' class='customizeImg' src='{{item.img}}'></image>
+            <view class='content'>
+              <text>【{{item.label}}】{{item.title}}</text>
+              <view class='price'>
+                <view class='priceLabel'>
+                  <view>售价</view>
+                  <view style="line-height: 15rpx;">RMB</view>
+                </view>
+                <text class='priceValue'>33</text>
+              </view>
+              <view style="display: flex;align-items:flex-end;">
+                <view >
+                  <view class='sub-info'>库存量 {{item.num}}</view>
+                  
+                  <view class='sub-info'>已卖出 {{item.supplierNum}}</view>
+                </view>
+                <button hidden="{{selectedNum == 0}}" data-idx='{{index}}' bindtap='changeStatus' class="{{item.status==0?'button':''}}" disabled='{{item.status==1}}'>{{item.status==0?'加购':'已加购'}}</button>
+                <button hidden="{{selectedNum == 1}}" data-idx='{{index}}' bindtap='checkSuppliers' class="button" style="min-width:200rpx">查看购物车</button>
+              </view>
+            </view>
+          </view>
+          <view class='related'>
+            <text>   </text>
+            <view class='relatedList'>
+              <view wx:for="{{item.related}}" wx:for-index="idx" wx:for-item="relatedItem" wx:key="idx">
+                <image mode='aspectFill' src='{{relatedItem.img}}'></image>
+                <view>{{relatedItem.title}}</view>
+              </view>
+            </view>
+            
+          </view>
+        </view>
+        <!-- <template wx:for="{{recommandItems}}" wx:key="key" is="goodItemCard" data="{{...item}}"></template> -->
+      
+    </scroll-view>    
+  </swiper-item>
+  <swiper-item>
+    <scroll-view scroll-y='true'  style='height:{{windowHeight-100}}rpx' bindscrolltolower="loadSupplier" lower-threshold="30">
+        <template is="supplyItem2" wx:for="{{suppliers}}" wx:key="key" data="{{...item}}"></template>
+    </scroll-view>   
+  </swiper-item>
+</swiper>

@@ -1,0 +1,41 @@
+var sub = function (val, num) {
+  if (val.length == 0 || val == undefined) {
+    return "none";
+  }
+  if (val.length > num) {
+    return val.substring(0, num);
+  }
+  else {
+    return val;
+  }
+}
+
+var sub2 = function (val, num) {
+  if (val.length == 0 || val == undefined) {
+    return "none";
+  }
+  if (val.length > num) {
+    return val.substring(0, num)+' ...';
+  }
+  else {
+    return val;
+  }
+}
+
+var numLen = function (val) {
+  return val.toString().length
+}
+
+var int = function(val){
+  return Number(val)
+}
+
+var sublist=function(lst,maxLen){
+  return lst.slice(0,maxLen)
+}
+
+module.exports.sub = sub
+module.exports.sub2 = sub2
+module.exports.numLen = numLen
+module.exports.int = int
+module.exports.sublist = sublist

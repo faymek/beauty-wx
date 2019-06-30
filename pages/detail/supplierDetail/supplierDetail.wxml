@@ -1,0 +1,55 @@
+<wxs src="../../../utils/subutil.wxs" module="tools" />
+<view class="header">
+  <view class="basic {{curStatus===0?'on':''}}" data-curstatus="0" bindtap='chooseCurStatus'>
+    <view class="word">基本信息</view>
+    <view class="pad {{curStatus===0?'padOn':''}}"></view>
+  </view>
+  <view class="identify {{curStatus===1?'on':''}}" data-curstatus="1" bindtap='chooseCurStatus'>
+    <view class="word">认证信息</view>
+    <view class="pad {{curStatus===1?'padOn':''}}"></view>
+  </view>
+</view>
+
+<view wx:if="{{curStatus===0}}">
+  <view class="form-container">
+    <view class="form-item" wx:for="{{basic.company}}" wx:key="key">
+      <view class="type">{{item.type}}</view>
+      <view class="content">{{item.content}}</view>
+    </view>
+  </view>
+
+  <view class="service-container">
+    <view class="service-titles">
+      <view class="service-title">买家服务能力</view>
+      <view class="service-title">与同行业对比</view>
+    </view>
+    <view class="service-item" wx:for="{{basic.service}}">
+      <view class="type">{{item.type}}</view>
+      <text decode='true'>{{tools.int(item.value)>0?"高":"低"}}于均值&nbsp;{{tools.int(item.value)}}%</text>
+      <image src='{{tools.int(item.value)>0?"/resources/images/up2.png":"/resources/images/down2.png"}}'></image>
+    </view>
+  </view>
+
+  <view class="form-container">
+    <view class="form-item">
+      <view class="type">联系人：</view>
+      <view class="content">{{basic.contact[0]}}</view>
+    </view>
+    <view class="form-item">
+      <view class="type">联系地址：</view>
+      <view class="content">{{basic.contact[1]}}</view>
+    </view>
+  </view>
+
+  <!--view class="form-container"></view-->
+</view>
+
+<view wx:else>
+  <view class="identify-title">工商注册信息</view>
+  <view class="form-container">
+    <view class="form-item" wx:for="{{identify.register}}" wx:key="key">
+      <view class="type">{{item.type}}</view>
+      <view class="content">{{item.content}}</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,23 @@
+<template name="goodItem">
+    <wxs src="../../utils/subutil.wxs" module="tools"/>
+    <view class="block" bindtap='toDetail'>
+        <view class="item">
+            <image class="img" src='{{img}}'></image>
+            <view class='detail'>
+                <view style='font-size:27rpx;' data-id="id">
+                    <text style="display: block;">{{tools.sub(name,nameNum)}}</text>
+                    <text class="sale">已售{{sale[0]}}{{sale[1]}}</text>
+                </view>
+
+                <view style='display: flex;flex-direction: row;justify-content:space-between;'>
+                    <view class='price'>
+                        <view>￥{{price[0]}}</view>
+                        <view style="margin-left:10rpx;margin-right:10rpx">--</view>
+                        <view>￥{{price[1]}}</view>
+                    </view>
+                    <image class='cart' data-idx="{{index}}" catchtap='alert' src="/resources/images/tabBar/shoppingCart1.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>

@@ -1,0 +1,59 @@
+<view class="profile">
+    <view class="avatar">
+        <image src="{{avatar}}"></image>
+    </view>
+    <view class="baseinfo">
+        {{name}}
+    </view>
+</view>
+
+<view class="panel">
+    <navigator class="panel-hd" hover-class="none" url="../orders/orders?id=0">
+        <view class="panel-hd-l"/>
+        <view>我的订单</view>
+        <view class="li-right">全部订单</view>
+        <view class="li-image"><image src="{{right}}"/></view>
+    </navigator>
+    <view class="division"/>
+    <view class="tab no-border">
+        <navigator class="tab-item" hover-class="none" url="../orders/orders?id=1">
+            <icon class="tab-icon iconfont icon-wallet-fill"/>
+            <text class="tab-text">待付款</text>
+        </navigator>
+        <navigator class="tab-item" hover-class="none" url="../orders/orders?id=2">
+            <icon class="tab-icon iconfont icon-truck"/>
+            <text class="tab-text">待收货</text>
+        </navigator>
+        <navigator class="tab-item" hover-class="none" url="../orders/orders?id=3">
+            <icon class="tab-icon iconfont icon-chat"/>
+            <text class="tab-text">已完成</text>
+        </navigator>
+        <navigator class="tab-item" hover-class="none" url="../orders/orders?id=4">
+            <icon class="tab-icon iconfont icon-money"/>
+            <text class="tab-text">售后/退款</text>
+        </navigator>
+    </view>
+</view>
+
+<view class="ul ul-user">
+    <navigator class="li" hover-class="none" url="./address/address">
+        <view class="li-hd"></view>
+        <view class="li-bd">收货地址</view>
+        <view class="li-image"><image src="{{right}}"/></view>
+    </navigator>
+    <view class="division"/>
+    <navigator class="li" hover-class="none" url="">
+        <view class="li-hd"></view>
+        <view class="li-bd">在线客服</view>
+        <view class="li-image"><image src="{{right}}"/></view>
+    </navigator>
+    <view class="division"/>
+    <navigator class="li" hover-class="none" url="./setting/setting">
+        <view class="li-hd"></view>
+        <view class="li-bd">系统设置</view>
+        <view class="li-image"><image src="{{right}}"/></view>
+    </navigator>
+</view>
+
+
+

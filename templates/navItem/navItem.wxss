@@ -1,0 +1,23 @@
+.navItems{
+  width:100%;
+  display:flex;
+  flex-flow: row wrap;
+}
+
+.navItem{
+  height:150rpx;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+}
+
+.navItem image{
+  width: 50%;
+  height: 50%
+}
+
+.name{
+  height:20%;
+  font-size:27rpx
+}

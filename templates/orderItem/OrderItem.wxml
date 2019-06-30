@@ -1,0 +1,8 @@
+<template name="orderItem">
+<view class="order-box" url="">
+    <image class="order-thumb" src="{{item.img}}"/>
+        <view class="cart-itemInfo">
+          <text class="cart-title">{{item.title}}</text>
+          </view>
+        </view>
+</template>

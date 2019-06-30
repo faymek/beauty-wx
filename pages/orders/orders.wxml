@@ -1,0 +1,51 @@
+<import src="../../templates/recommend/recommend.wxml"/>
+<view class='orders-navbar'>
+  <view class="orders-navbar{{currentTab==index?'-active':'-inactive'}}" bindtap='navbarTap' wx:for="{{navbar}}" wx:key="key" data-index="{{index}}">
+      {{item}}
+  </view>
+</view>
+
+<view class='orders-container'>
+  <view class='orders-box'>
+    <view wx:if="{{showOrders.length==0}}">
+      <view class='orders-empty'>
+        <text style="font-size: 33rpx">您还没有相关的订单</text>
+        <text style="font-size: 22rpx">可以看看您有哪些需要的</text>
+      </view>
+    <template is="recommend" data="{{...orders[0]}}"></template>
+    </view>
+    <view wx:else>
+      <view wx:for="{{showOrders}}" wx:key="key">
+        <view class="orders-shop">
+          <view class="orders-shopName">
+            <text class="orders-shopTitle">{{item.shopName}}</text>
+            <text class="orders-status">{{navbar[showOrders[index].status]}}</text>
+          </view>
+          <view wx:for="{{showOrders[index].Items}}" wx:key="key">
+            <view class="orders-box" url="">
+              <navigator url="">
+                <image class="orders-thumb" src="{{item.img}}"/>
+              </navigator>
+              <text class="orders-title">{{item.title}}</text>
+              <view class="orders-info">
+                <text class="orders-price">¥{{item.price[0]}}</text>
+                <text class="orders-count">×{{item.num}}</text>
+              </view>
+            </view>
+          </view>
+          <view class="orders-total">
+            <text style="margin-right: 20rpx">共{{item.totalNum}}件商品</text>
+            <text >合计:¥{{item.totalPrice}}</text>
+          </view>
+          <view class="orders-buttonGroup">
+            <view class="orders-button1" bindtap="logistics">查看物流</view>
+            <view hidden='{{showOrders[index].status != 1}}' class="orders-button2">进行付款</view>
+            <view bindtap="confirmOrder" hidden='{{showOrders[index].status != 2}}' class="orders-button2">确认收货</view>
+            <view hidden='{{showOrders[index].status != 3}}' class="orders-button2">申请售后</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+

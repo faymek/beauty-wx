@@ -1,0 +1,360 @@
+
+.header{
+  height:150rpx;
+  display: flex;
+  flex-direction: row;
+  background: linear-gradient(to right,#FE5400,rgb(255, 141, 11))
+}
+
+.header image{
+  width:110rpx;
+  height: 110rpx;
+  margin: 20rpx;
+}
+
+.header .userName{
+  width:350rpx;
+  margin-top: 30rpx;
+  font-size: 35rpx;
+  color: #FFFFFF;
+}
+
+.font30White{
+  font-size: 30rpx;
+  color: #FFFFFF;
+}
+
+.shopData{
+  height:100rpx;
+  display: flex;
+  flex-direction: row;
+  background: linear-gradient(to right,#FE5400,rgb(255, 141, 11))
+}
+
+.shopData .dataDetail{
+  width:250rpx;
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.orderManagement{
+  height:250rpx;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1rpx solid #e4e4e4
+}
+
+.orderManagement .checkAllOrder{
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.orderManagement .checkAllOrder .title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 35rpx;
+  width:200rpx;
+}
+
+.orderManagement .checkAllOrder .tap{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  width:200rpx;
+  margin-left: 350rpx;
+}
+
+.orderManagement .checkAllOrder .tap image{
+  width:30rpx;
+  height: 30rpx;
+}
+
+.orderManagement .orderStatus{
+  height:150rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.orderManagement .orderStatus .orderStatusItem{
+  width:25%;
+  height: 150rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+}
+
+.orderManagement .orderStatus .orderStatusItem image{
+  width: 45rpx;
+  height: 45rpx;
+  margin-bottom: 10rpx
+}
+
+.shopBinding{
+  height:130rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shopBinding .fontCenter{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height:80%;
+  width: 93%;
+  border: 5rpx solid #FE5400;
+  color:#FE5400;
+  font-size: 37rpx;
+  font-weight: 500;
+}
+
+.myShopItem{
+  height: 120rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1rpx solid #e4e4e4
+}
+
+.myShopItem image{
+  margin-left: 30rpx;
+  width: 90rpx;
+  height: 90rpx;
+  margin-right: 20rpx;
+}
+
+.myShopItem .nameContainer{
+  display: flex;
+  flex-direction: column;
+  height: 90rpx;
+  width: 160rpx;
+}
+
+.myShopItem .nameContainer .shopName{
+  font-size: 30rpx;
+  margin-bottom: 15rpx;
+}
+
+.myShopItem .nameContainer .platform{
+  font-size: 25rpx;
+  color:#7e7e7e;
+}
+
+.myShopItem .myShopData{
+  height: 90rpx;
+  width:148rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center
+}
+
+.myShopItem .border{
+  border-left: 2rpx solid #FE5400;
+  border-right: 2rpx solid #FE5400;
+}
+
+.myShopItem .myShopData .dataFont{
+  color:#FE5400;
+  font-size: 28rpx;
+  margin-bottom: 10rpx;
+}
+
+.order{
+  height:80rpx;
+  background: #F4F4F4;
+  padding-left: 30rpx;
+  font-size: 35rpx;
+  display: flex;
+  align-items: center
+}
+
+.order-all{
+  background-color:#F4F4F4;
+  padding: 0 20rpx 0 20rpx;
+}
+
+.order-one{
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  padding: 20rpx;
+  border-radius: 20rpx;
+}
+
+.order-orderHead{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 25rpx;
+}
+
+.order-orderId{
+  padding-left: 25rpx;
+}
+
+.order-orderId .order-icon {
+  font-size: 16rpx;
+  width: 40rpx;
+  text-align: center;
+}
+
+.order-blank{
+  height: 20rpx;
+}
+
+.order-box{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 25rpx;
+}
+
+.order-box .order-thumb{
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.order-box .order-itemInfo{
+  display: flex;
+  flex-direction: column;
+  height:200rpx;
+  width:430rpx
+}
+
+.order-box .order-itemInfo .name_price_num{
+  height:80rpx;
+  display: flex;
+  flex-direction: row;
+  margin-top: 10rpx;
+}
+
+.order-box .order-itemInfo .name_price_num .name{
+  height:75rpx;
+  width:330rpx;
+  font-size:27rpx;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  align-content: center;
+}
+
+.order-box .order-itemInfo .name_price_num .price_num{
+  height:80rpx;
+  margin-left:10rpx;
+  width:90rpx;
+  display: flex;
+  flex-direction: column
+}
+
+.order-box .order-itemInfo .name_price_num .price_num .price{
+  font-size:27rpx;
+  text-align: right
+}
+
+.order-box .order-itemInfo .name_price_num .price_num .num{
+  font-size:23rpx;
+  text-align: right;
+  color:#7e7e7e;
+  font-weight: 600;
+  margin-top: 10rpx
+}
+
+.order-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  font-size: 25rpx;
+  background: #FFFFFF;
+}
+
+.footer-blank{
+  width:100%;
+  height:90rpx;
+}
+
+.cart-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 25rpx;
+  background: #FFFFFF;
+}
+
+.cart-footer .choose-all{
+  width:70rpx;
+}
+
+.cart-footer .get-order{
+  width:260rpx;
+  height:60rpx;
+  background: #FE5400;
+  color:white;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 30
+}
+
+.cart-footer .get-order image{
+  width:50rpx;
+  height: 50rpx;
+  margin-left: 20rpx;
+}
+
+.cart-footer .cart-total-text{
+  margin-left:20rpx;
+  width:70rpx;
+}
+
+.cart-footer .cart-total-price{
+  width: 120rpx;
+  color: red;
+}
+
+.cart-footer .cart-submit {
+  width:130rpx;
+  background: #FF7111;
+  color: white;
+  height:60rpx;
+  border-radius: 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.cart-footer .cart-icon {
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+}
+
+
+
+
+
+
+
+
+

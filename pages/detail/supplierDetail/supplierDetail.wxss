@@ -1,0 +1,132 @@
+page {
+  background: #fcfcfc;
+}
+
+.header {
+  width: 100%;
+  height: 100rpx;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 40rpx;
+  font-weight: 400;
+  z-index: 1;
+  position: sticky;
+  top: 0;
+  border-bottom: 1rpx solid #e6e6e6;
+}
+
+.header .basic {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header .identify {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header .word {
+  height: 95rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header .pad {
+  height: 5rpx;
+  width: 180rpx;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.header .on {
+  font-size: 45rpx;
+  font-weight: 500;
+  color: #fe5400;
+}
+
+.header .padOn {
+  background: #fe5400;
+}
+
+.form-container {
+  margin-top: 20rpx;
+  background: #fff;
+  border-top: 1rpx solid #e6e6e6;
+  border-bottom: 1rpx solid #e6e6e6;
+}
+
+.form-container .form-item {
+  margin-left: 30rpx;
+  border-bottom: 1rpx solid #e6e6e6;
+  padding-bottom: 30rpx;
+  padding-top: 30rpx;
+  font-size: 30rpx;
+  display: flex;
+  flex-direction: row
+}
+
+.form-container .form-item .type {
+  width: 150rpx;
+}
+
+.form-container .form-item .content{
+  width:540rpx;
+}
+
+.service-container{
+  margin-top: 20rpx;
+  background: #fff;
+  border-top: 1rpx solid #e6e6e6;
+  border-bottom: 1rpx solid #e6e6e6;
+  padding-top:30rpx;
+  padding-bottom: 30rpx;
+}
+
+.service-container .service-titles{
+  margin-left: 30rpx;
+  font-size: 28rpx;
+  color:#cacaca;
+  display: flex;
+  flex-direction: row
+}
+
+.service-container .service-titles .service-title{
+  width:360rpx
+}
+
+.service-container .service-item{
+  margin-left: 30rpx;
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: row;
+  font-size: 30rpx;
+}
+
+.service-container .service-item .type{
+  width:360rpx;
+}
+
+.service-container .service-item image{
+  margin-left: 10rpx;
+  margin-top: 7rpx;
+  width:30rpx;
+  height:30rpx
+}
+
+.identify-title{
+  margin-top:40rpx;
+  margin-left: 30rpx;
+  font-size:28rpx;
+  color:#cacaca
+}
